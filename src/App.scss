@@ -1,0 +1,169 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 4em;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  color: white;
+  padding: 0 2em 0 1em;
+}
+.home{
+  min-height: calc(100vh - 16em);
+}
+
+.sign-in{
+  background-color: #61DBFB;
+  padding: 0.5em 1em;
+  border-radius: 35px;
+  color: #000;
+}
+
+.footer{
+  background-color: #282c34;
+  margin-bottom: 0;
+  bottom: 0;
+  min-width: 100%;
+
+}
+
+.footer-items{
+  padding: 4em 20em;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  justify-content: space-between;
+  @media only screen and (max-device-width: 480px){
+    flex-direction: column;
+    padding: 2em 0;
+  }
+}
+
+.banner{
+  background-image: url(images/car.jpg);
+  filter: blur(12px);
+  width: 100%;
+    height: 30vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  @media only screen and (max-device-width: 480px){
+    height: 60vh;
+  }
+}
+
+.banner-image{
+  width: 40%;
+  margin-right: 0;
+  height: 25%;
+  right: 0;
+  max-height: 35vh;
+  max-width: 40vw;
+  @media only screen and (max-device-width: 480px){
+    max-width: 100%;
+    width:100%;
+    height:none;
+    max-height:none;
+    flex-basis: 70%;
+  }
+}
+
+.banner-content{
+  position: absolute;
+  top: 5em;
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+    &--left{
+      align-self: center;   
+      flex-basis: 40%;
+      margin: 0 5em;
+      @media only screen and (max-device-width: 480px){
+        flex-basis: 50%;
+      }
+    }
+
+    @media only screen and (max-device-width: 480px){
+      flex-direction: column;
+      height: 65VH;
+    }
+
+}
+
+.content{
+  margin: 4em 2em;
+}
+
+.liked-post{
+  background-color: #61DBFB;
+}
+
+.post-item{
+
+  margin: 2em 2em;
+  padding: 2em;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &--title{
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &--body{
+    font-size: 14px;
+  }
+
+  &--header{
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.actions{
+  margin-bottom: 0;
+    bottom: 0;
+    float: right;
+    position: relative;
+}
+
+.actions-button{
+  background: #000;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 20px;
+    padding: 0.5em 1.5em;
+}
+
+.footer-item{
+  color: #fff;
+}
+
+.App-link {
+  text-decoration: none;
+  color: #000;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body{
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7;
+}
