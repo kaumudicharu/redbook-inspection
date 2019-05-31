@@ -7,7 +7,7 @@ import {fetchUserById} from '../../api/UserApi';
 class PostItem extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
-        this.state = { data: {}, userData: {} };
+        this.state = { data: {}, userData: {}, isLiked: false };
     }
 
     fetchData() {
@@ -15,7 +15,8 @@ class PostItem extends React.Component<any, any> {
             .then((data) => {
                 this.fetchUserData(data.userId)
                     .then((userData) => {
-                        this.setState({ data: data, userData: userData });
+                        this.setState({ data: data, userData: userData, isLiked: this.isPostLiked(data.id) });
+
                     })
                     .catch(console.log);
             })
@@ -62,6 +63,8 @@ class PostItem extends React.Component<any, any> {
             let likedPosts = [this.state.data.id];
             localStorage.setItem("LikedPosts", JSON.stringify(likedPosts));
         }
+
+        this.setState({ isLiked: true});
     }
 
     unlike() {
@@ -77,11 +80,13 @@ class PostItem extends React.Component<any, any> {
                 }
             }
         }
+
+        this.setState({ isLiked: false});
     }
 
     render() {
         const desc = this.state.userData.company ? this.state.userData.company.name : "";
-        let actionItem = this.isPostLiked(this.state.data.id) ?
+        let actionItem = this.state.isLiked ?
             <button className="actions-button" onClick={() => this.unlike()}>Unlike</button> :
             <button className="actions-button" onClick={() => this.like()}>Like</button>
         return (
